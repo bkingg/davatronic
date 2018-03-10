@@ -1,6 +1,4 @@
 ---
-pages:
-- artistes.markdown
 hide_body: false
 fields:
 - name: title
