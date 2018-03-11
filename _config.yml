@@ -15,12 +15,6 @@
 # in the templates via {{ site.myvariable }}.
 title: Davatronic
 permalink: pretty
-slider-titre: Cryptage Informatique et Protection de données
-slider-sous-titre: 
-coming-soon-background-image: "/uploads/crypto.png"
-footer-text: texte de bas de page
-phone: 44449553935
-email: test@email.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
