@@ -1,0 +1,39 @@
+---
+---
+
+@import 'bootstrap.min';
+@import 'font-awesome.min';
+@import 'ionicons.min';
+@import 'animate';
+@import 'hover';
+@import 'magnific-popup';
+@import 'owl.carousel';
+@import 'owl.transitions';
+@import 'settings';
+@import 'layers';
+@import 'navigation';
+@import 'style';
+
+main{
+    min-height: 100vh !important;
+    position: relative;
+    h1{
+        padding-top: 80px;
+        font-size: 50px;
+    }
+
+    /*==============================
+    =======  6.6 Particles  =======     
+    *=============================*/
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}

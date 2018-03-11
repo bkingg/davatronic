@@ -1,47 +1,23 @@
 <footer id="footer" class="footer bg-dark">     
     <div class="container">
         <div class="row-base row">
-        <div class="brand-info col-base col-sm-6 col-md-4">
-            <a href="#top" class="brand js-target-scroll">
-            Imperium Prod.
-            </a>
-            <p>{{ site.footer-text }}</p>
-        </div>
-        <div class="col-base col-sm-6 col-md-2">
-            <ul class="nav-bottom">
-            {% for menu in site.menus %}
-                <li><a href="{{ menu.lien }}">{{ menu.title }}</a></li>
-            {% endfor %}
-            </ul>
-        </div>
-        <div class="col-contacts col-base col-sm-6 col-md-3">
-            <a href="tel:88005553535" class="phone">{{ site.phone }}</a><br>
-            <a href="mailto:{{ site.email }}" class="email">{{ site.email }}</a>
-        </div>
-        <div class="col-subscribe col-base col-sm-6 col-md-3">
-            <div class="subscribe-title">Newsletter</div>
-            <form class="subscribe-form js-subscribe-form">
-            <div class="input-group">
-                <input id="mc-email" type="email" class="input-round form-control" placeholder="Email">
-                <span class="input-group-btn">
-                <button class="btn" type="submit"><span class="arrow-right"></span></button>
-                </span>
+            <div class="brand-info col-base col-sm-6 col-md-6">
+                <a href="#top" class="brand js-target-scroll">
+                Davatronic
+                </a>
+                <p>{{ site.footer-text }}</p>
             </div>
-            <label class="mc-label" for="mc-email" id="mc-notification"></label>
-            </form>
-        </div>
+            <div class="col-contacts col-base col-sm-6 col-md-3">
+                <a href="tel:88005553535" class="phone">{{ site.phone }}</a><br>
+                <a href="mailto:{{ site.email }}" class="email">{{ site.email }}</a>
+            </div>
         </div>
     </div>
     <div class="footer-bottom">
         <div class="container">
             <div class="copyrights">
-            © Copyright {{ 'now' | date: '%Y' }} Imperium Prod. All Rights Reserved
+            © Copyright {{ 'now' | date: '%Y' }} Davatronic. All Rights Reserved
             </div>
-            <ul class="social-list">
-            <li><a href="{{ site.facebook-lien }}" class="fa fa-facebook"></a></li>
-            <li><a href="{{ site.twitter-lien }}" class="fa fa-twitter"></a></li>
-            <li><a href="{{ site.instagram-lien }}" class="fa fa-instagram"></a></li>
-            </ul>  
         </div>
     </div>
     </footer>
