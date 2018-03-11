@@ -19,15 +19,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections:
-  programmes:
-    output: true
-    permalink: /:collection/:title
-  slides:
-    output: true
-    permalink: /:collection/:title
-  temoignages:
-    output: true
-    permalink: /:collection/:title
 
 
 # Build settings
