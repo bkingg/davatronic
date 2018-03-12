@@ -11,40 +11,6 @@
 <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
 
-<!-- Styles -->
-<link href="//fonts.googleapis.com//css?family=Lora:400,400i,700,700i|Montserrat:400,700|Playfair+Display:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
-<link href="/css/theme.css" rel="stylesheet" media="all">
-</head>
-<body class="comming-soon">
-  
-    <!-- Loader -->
-
-    {% include loader.html %}
-
-    <!-- Header -->
-
-    {% include header.html %}
-    
-    <!-- Home -->
-    
-    <main class="main main-inner main-comming-soon" data-stellar-background-ratio="0.8" style="background-image: url({{ site.data.info.coming-soon-background-image }})">
-      <div class="container">
-        <div class="opener">
-          <h1>{{ site.data.info.slider-titre }}</h1>
-        </div>
-      </div>
-      <div id="particles-js"></div>
-    </main>
-
-    <div class="content"> 
-
-      {{ content }}
-  
-      <!-- Footer -->
-
-      {% include footer.html %}
-    </div>
-
 <!-- SCRIPTS -->
 
 <script src="/js/jquery.min.js"></script>
@@ -74,7 +40,42 @@
 <script src="/js/rev-slider/revolution.extension.slideanims.min.js"></script>
 <script src="/js/rev-slider/revolution.extension.video.min.js"></script>
 <script src="/js/interface.js"></script> 
-<script src="/js/jquery.particleground.js"></script> 
-<script src="/js/particles.js"></script> 
+
+<!-- Styles -->
+<link href="//fonts.googleapis.com//css?family=Lora:400,400i,700,700i|Montserrat:400,700|Playfair+Display:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+<link href="/css/theme.css" rel="stylesheet" media="all">
+</head>
+<body class="comming-soon">
+  
+    <!-- Loader -->
+
+    {% include loader.html %}
+
+    <!-- Header -->
+
+    {% include header.html %}
+    
+    <!-- Home -->
+    
+    <main class="main main-inner main-comming-soon" data-stellar-background-ratio="0.8" style="background-image: url({{ site.data.info.coming-soon-background-image }})">
+      <div class="container">
+        <div class="opener">
+          <h1>{{ site.data.info.slider-titre }}</h1>
+        </div>
+      </div>
+      <div id="particles-js" class="particles-js"></div>
+    </main>
+
+    <div class="content"> 
+
+      {{ content }}
+  
+      <!-- Footer -->
+
+      {% include footer.html %}
+    </div>
+
+  <script src="/js/jquery.particleground.js"></script> 
+  <script src="/js/particles.js"></script> 
 </body>
 </html>

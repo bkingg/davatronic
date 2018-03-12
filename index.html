@@ -1,3 +1,103 @@
 ---
 layout: default
 ---
+
+<section class="section bg-light" id="contact">
+    <div class="container">
+      <h2 class="section-title-2" style="text-align: center;">Contact</h2>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <form id="davatronic-contact" class="" action="?">
+            <input type="hidden" name="_subject" value="Contact">
+            <input type="hidden" name="_format" value="plain">
+            <input type="hidden" name="_language" value="fr">
+            <input type="text" name="_gotcha" style="display:none">
+            <div class="col-sm-6 form-group">
+                <input type="text" name="nom" placeholder="Nom *" required>
+                <label for="nom" class="error">Veuiller entrer votre nom.</label>
+            </div>
+             <div class="col-sm-6 form-group">
+                <input type="email" name="email" required="" placeholder="Email *">
+                <label for="email" class="error">Veuiller entrer votre email.</label>
+              </div>
+            <div class="col-sm-12 form-group">
+                <textarea rows="3" name="message" placeholder="Message *" required></textarea>
+                <label for="message" class="error">Veuiller entrer votre message.</label>
+            </div>
+            <div class="col-sm-12 text-right">
+              <button type="submit" class="btn">Envoyer</button>
+            </div>
+
+            <p class="status__failure text-error" style="display: none;">Une erreur s'est produite. Veuillez réessayer.</p>
+            <p class="status__success text-success" style="display: none;">Votre message a été envoyé!</p>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    $(function(){
+        $(document).on('submit', '#davatronic-contact', function(event){
+            event.preventDefault();
+        
+            var errors = false;
+        
+            var form = this;
+        
+            $(form).find('.status__failure').slideUp();
+            $(form).find('.status__success').slideUp();
+        
+            // Clear out errors
+            var errField = 'input.error, select.error, textarea.error';
+            var msgField = 'label.error';
+            var errClass = 'error';
+            $(errField, form).removeClass(errClass);
+        
+            if ( !form.nom.value ) {
+            $(form.nom).addClass(errClass)
+                .siblings(msgField).slideDown();
+            errors = true;
+            } else {
+            $(this.nom).siblings(msgField).slideUp();
+            }
+            
+            if ( /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/.test(form.email.value) == false ) {
+            $(form.email).addClass(errClass).siblings(msgField).slideDown();
+            errors = true;
+            } else {
+            $(form.email).siblings(msgField).slideUp();
+            }
+
+            if ( !form.message.value ) {
+            $(form.message).addClass(errClass)
+                .siblings(msgField).slideDown();
+            errors = true;
+            } else {
+            $(this.message).siblings(msgField).slideUp();
+            }
+        
+            if (errors) {
+            return false;
+            }
+        
+            $.ajax({
+                url: 'https:' + '//formspree.io/' + '{{ site.data.info.email | split: '@' | first }}' + '@' + '{{ site.data.info.email | split: '@' | last }}', 
+                method: 'POST',
+                data: $(form).serialize(),
+                dataType: 'json',
+                success: function(data){
+                    console.log('success', data);
+                    $(form).find('.status__failure').slideUp();
+                    $(form).find('.status__success').slideDown();
+                    $(form)[0].reset();
+                },
+                error: function(data){
+                    console.log('error', data);
+                    $(form).find('.status__failure').slideDown();
+                    $(form).find('.status__success').slideUp();
+                }
+            });
+        });
+    });
+</script>
