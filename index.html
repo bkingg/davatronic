@@ -188,10 +188,9 @@
             }
         
             $.ajax({
-                url: 'https:' + '//formspree.io/' + ' 253 Boulevard  de Leeds, 59777 LILLE' + '@' + ' 253 Boulevard  de Leeds, 59777 LILLE', 
+                url: 'https:' + '//formspree.io/' + 'info' + '@' + 'davatronic.com', 
                 method: 'POST',
                 data: $(form).serialize(),
-                dataType: 'json',
                 success: function(data){
                     console.log('success', data);
                     $(form).find('.status__failure').slideUp();
@@ -222,7 +221,7 @@
             </div>
             <div class="col-contacts col-base col-sm-6 col-md-3">
                 <a href="tel:" class="phone"></a><br>
-                <a href="mailto: 253 Boulevard  de Leeds, 59777 LILLE" class="email"> 253 Boulevard  de Leeds, 59777 LILLE</a>
+                <p>253 Boulevard  de Leeds, 59777 LILLE</p>
             </div>
         </div>
     </div>
